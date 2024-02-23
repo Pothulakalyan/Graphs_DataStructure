@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int n,m;
+	cin>>n>>m;
+	//adjecny matrix
+	vector<int>adj[(n+1)];
+	for(int i=0;i<m;i++){
+	    int u,v;
+	    //reading u and v;
+	    cin>>u>>v;
+	    //(adj[u]-->means index) in that index to keep the value is 'v'
+	    adj[u].push_back(v);
+	    //(adj[v]-->means index) in this index to keep the value is 'u'
+	    adj[v].push_back(u);
+	} 
+	for(int i=0;i<m;i++){
+	    for(int j=0;j<adj[i].size();j++)
+	    {
+	        cout<<adj[i][j]<<" ";
+	    }
+	    cout<<endl;
+	}
+	return 0;
+}
